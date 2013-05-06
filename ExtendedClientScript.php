@@ -206,7 +206,7 @@ class ExtendedClientScript extends CClientScript
 		$this->filePath or $this->filePath = $this->basePath.$this->fileUrl;
 
 		$optionsHash = ($type == 'js') ? md5($this->basePath . $this->compressJs . $this->ttlDays . $this->prefix)
-												 : md5($this->basePath . $this->compressCss . $this->ttlDays . $this->prefix . serialize($this->cssMinFilters . $this->cssMinPlugins));
+												 : md5($this->basePath . $this->compressCss . $this->ttlDays . $this->prefix . serialize($this->cssMinFilters) . serialize($this->cssMinPlugins));
 
 		if ($this->autoRefresh)
 		{
