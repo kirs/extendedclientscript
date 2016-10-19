@@ -236,7 +236,7 @@ class ExtendedClientScript extends CClientScript
 			$combinedFile = '';
 
 			foreach ($urls as $key => $file)
-				$combinedFile .= file_get_contents($this->basePath.'/'.$file);
+				$combinedFile .= '\n' . file_get_contents($this->basePath.'/'.$file);
 
 			if ($type == 'js' && $this->compressJs)
 				$combinedFile = $this->minifyJs($combinedFile);
